@@ -13,20 +13,20 @@ ESP8266 Arduino core comes with libraries to communicate over WiFi using TCP and
 - Go to Arduino directory
 - Clone this repository into hardware/esp8266com/esp8266 directory
 ```bash
-cd /PATH/TO/arduino
-cd hardware
-mkdir esp8266com
-cd esp8266com
-git clone git://github.com/icamgo/Noduino.git esp8266
+$ cd /PATH/TO/arduino
+$ cd hardware
+$ mkdir esp8266com
+$ cd esp8266com
+$ git clone git://github.com/icamgo/Noduino.git esp8266
 ```
 - Download binary tools (you need Python 2.7)
 ```bash
-cd esp8266/tools
-python get.py
+$ cd esp8266/tools
+$ python get.py
 ```
 - Restart Arduino
 
-Documentation for latest development version:
+### Documentation
 
 - [Reference](doc/reference.md)
 - [Supported boards](doc/boards.md)
