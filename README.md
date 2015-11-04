@@ -7,12 +7,13 @@ This project brings support for ESP8266 chip to the Arduino environment. It lets
 
 ESP8266 Arduino core comes with libraries to communicate over WiFi using TCP and UDP, set up HTTP, mDNS, SSDP, and DNS servers, do OTA updates, use a file system in flash memory, work with SD cards, servos, SPI and I2C peripherals.
 
-### Using git version
+### Installing with git
 
 - Install Arduino 1.6.5 / 1.6.6
 - Go to Arduino directory
-- Clone this repository into hardware/esp8266com/esp8266 directory (or clone it elsewhere and create a symlink)
+- Clone this repository into hardware/esp8266com/esp8266 directory
 ```bash
+cd /PATH/TO/arduino
 cd hardware
 mkdir esp8266com
 cd esp8266com
