@@ -36,4 +36,4 @@ $ ./gen.py
 - [Reference](doc/reference.md)
 - [Supported boards](doc/boards.md)
 - [Change log](doc/changes.md)
-
+- [OTA Update](doc/ota_updates.md)
