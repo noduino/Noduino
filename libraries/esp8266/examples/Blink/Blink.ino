@@ -5,6 +5,9 @@
  
  The blue LED on the ESP-01 module is connected to GPIO1 
  (which is also the TXD pin; so we cannot use Serial.print() at the same time)
+
+ The blue LED on the ESP-12F module is connected to GPIO2 
+ (which is also the U1TXD pin; so we cannot use Serial1.print() at the same time)
  
  Note that this sketch uses BUILTIN_LED to find the pin with the internal LED
 */

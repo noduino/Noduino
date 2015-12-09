@@ -8,8 +8,8 @@
 name=ESP8266 Modules
 version=1.6.4
 
-runtime.tools.xtensa-lx106-elf-gcc.path={runtime.platform.path}/tools/xtensa-lx106-elf
-runtime.tools.esptool.path={runtime.platform.path}/tools/esptool
+runtime.tools.xtensa-lx106-elf-gcc.path={runtime.platform.path}/tools/xtensa-toolchain/xtensa-lx106-elf
+runtime.tools.esptool.path={runtime.platform.path}/tools/xtensa-toolchain/bin
 
 compiler.path={runtime.tools.xtensa-lx106-elf-gcc.path}/bin/
 compiler.sdk.path={runtime.platform.path}/tools/sdk
@@ -64,7 +64,7 @@ recipe.cpp.o.pattern="{compiler.path}{compiler.cpp.cmd}" {compiler.cpreprocessor
 recipe.S.o.pattern="{compiler.path}{compiler.c.cmd}" {compiler.cpreprocessor.flags} {compiler.S.flags} -DF_CPU={build.f_cpu} -DARDUINO={runtime.ide.version} -DARDUINO_{build.board} -DARDUINO_ARCH_{build.arch} {compiler.c.extra_flags} {build.extra_flags} {includes} "{source_file}" -o "{object_file}"
 
 ## Create archives
-recipe.ar.pattern="{compiler.path}{compiler.ar.cmd}" {compiler.ar.flags} {compiler.ar.extra_flags} "{build.path}/{archive_file}" "{object_file}"
+recipe.ar.pattern="{compiler.path}{compiler.ar.cmd}" {compiler.ar.flags} {compiler.ar.extra_flags} "{archive_file_path}" "{object_file}"
 
 ## Combine gc-sections, archives, and objects
 recipe.c.combine.pattern="{compiler.path}{compiler.c.elf.cmd}" {compiler.c.elf.flags} {compiler.c.elf.extra_flags} -o "{build.path}/{build.project_name}.elf" -Wl,--start-group {object_files} "{build.path}/{archive_file}" {compiler.c.elf.libs} -Wl,--end-group  "-L{build.path}"
@@ -91,12 +91,12 @@ recipe.size.regex.data=^(?:\.data|\.rodata|\.bss)\s+([0-9]+).*
 
 tools.esptool.cmd=esptool
 tools.esptool.cmd.windows=esptool.exe
-tools.esptool.path={runtime.platform.path}/tools/esptool
+tools.esptool.path={runtime.platform.path}/tools/xtensa-toolchain/bin
 #runtime.tools.esptool.path
 
 tools.mkspiffs.cmd=mkspiffs
 tools.mkspiffs.cmd.windows=mkspiffs.exe
-tools.mkspiffs.path={runtime.platform.path}/tools/mkspiffs
+tools.mkspiffs.path={runtime.platform.path}/tools/xtensa-toolchain/bin
 #runtime.tools.mkspiffs.path
 
 tools.esptool.upload.protocol=esp
@@ -107,7 +107,7 @@ tools.esptool.network.pattern=python "{path}/espota.py" -i "{serial.port}" -p "{
 
 tools.espota.cmd=python
 tools.espota.cmd.windows=python.exe
-tools.espota.path={runtime.platform.path}/tools
+tools.espota.path={runtime.platform.path}/tools/xtensa-toolchain/bin
 
 tools.espota.upload.protocol=espota
 tools.espota.upload.params.verbose=

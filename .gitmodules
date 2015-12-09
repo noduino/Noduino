@@ -1,0 +1,3 @@
+[submodule "tools/xtensa-toolchain"]
+	path = tools/xtensa-toolchain
+	url = git://github.com/icamgo/xtensa-toolchain.git
